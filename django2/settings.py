@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-29xzz$(n9+96^g)#_h(r@+3rv=9)2xi#p_!4b+&a#vg(j73pw9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -96,11 +96,12 @@ DATABASES = {
 '''
 
 # usando postgres no heroku
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://postgres:CgIVTRcghaQtoGKXmeadiCPRMyrLeEsY@autorack.proxy.rlwy.net:39163/railway'
+    )
 }
 
 

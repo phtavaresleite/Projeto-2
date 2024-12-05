@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - './app:/app'
+    command:
+      ["/bin/sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+    environment:
+      - DB_HOST=db
+      - DB_NAME=db-data
+      - DB_USER=ph.tavares
+      - DB_PASSWORD=784512
+    depends_on:
+      - db
+    container_name: django2
+
+volumes:
+ db-data:
