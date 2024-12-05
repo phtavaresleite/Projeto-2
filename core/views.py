@@ -6,6 +6,7 @@ from .models import Produto
 from .auth import LoginForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
 
 # Create your views here.
 def index(request):
@@ -32,6 +33,7 @@ def contato(request):
     return render(request, 'contato.html', context)
 
 @login_required
+@csrf_protect
 def produtos(request):
 
     print (f'Usuario: {request.user}')
