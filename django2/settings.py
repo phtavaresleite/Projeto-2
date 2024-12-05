@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-29xzz$(n9+96^g)#_h(r@+3rv=9)2xi#p_!4b+&a#vg(j73pw9'
+# SECRET_KEY = 'django-insecure-29xzz$(n9+96^g)#_h(r@+3rv=9)2xi#p_!4b+&a#vg(j73pw9'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '29xzz$(n9+96^g)#_h(r@+3rv=9)2xi#p_!4b+&a#vg(j73pw9')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['*']
 
@@ -141,7 +144,7 @@ USE_TZ = True
 
 LOGIN_REDIRECT_URL = 'produtos'
 
-import os
+
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -149,6 +152,9 @@ STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+SESSION_COKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
