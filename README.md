@@ -27,7 +27,7 @@ Este é um projeto Django que visa criar uma aplicação web para gerenciar prod
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/phtavaresleite/Projeto-Cadastro_de_Produtos
    ```
 
 2. Crie um ambiente virtual:
