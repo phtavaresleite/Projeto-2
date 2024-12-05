@@ -30,11 +30,11 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['*']
 
-CORS_ALLOWED_ORIGINS = [
-    'https://projeto-cadastrodeprodutos-production.up.railway.app',
-    'http://localhost:8000',  # if you need local development
-    'http://127.0.0.1:8000',  # if you need local development
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'https://projeto-cadastrodeprodutos-production.up.railway.app',
+#     'http://localhost:8000',  # if you need local development
+#     'http://127.0.0.1:8000',  # if you need local development
+# ]
 
 
 # Application definition
