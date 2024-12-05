@@ -30,6 +30,12 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = [
+    'https://projeto-cadastrodeprodutos-production.up.railway.app',
+    'http://localhost:8000',  # if you need local development
+    'http://127.0.0.1:8000',  # if you need local development
+]
+
 
 # Application definition
 
@@ -48,6 +54,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
