@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Produtos {% endblock %}
+
+{% block content %}
+{{block.super}}
+{{bootstrap5_messages}}
+<h1>Cadastrar Produto</h1>
+<form action="{% url 'produtos' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary"> Cadastrar </button>
+    {% endbuttons %}
+</form>
+
+{% endblock %}

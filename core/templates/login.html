@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block title%}Login{%endblock%}
+{%block content%}
+<h1>Login</h1>
+{% load bootstrap5 %}
+{% bootstrap_messages %}
+<form action="{% url 'login' %}" method="post" class="form" autocomplete="off">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary"> Entrar </button>
+    {% endbuttons %}
+</form>
+{%endblock%}
