@@ -32,10 +32,8 @@ def contato(request):
     }
     return render(request, 'contato.html', context)
 
-@login_required
-def produtos(request):
 
-    print (f'Usuario: {request.user}')
+def produtos(request):
     if request.method == 'POST':
         form = ProdutoModelForm(request.POST, request.FILES)
         if form.is_valid():
