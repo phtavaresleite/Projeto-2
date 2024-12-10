@@ -103,7 +103,7 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres:CgIVTRcghaQtoGKXmeadiCPRMyrLeEsY@autorack.proxy.rlwy.net:39163/railway'
+        default='postgresql://postgres:ZQeEqFgIcGdswdyyicGQjHGIdRDaRVUh@postgres.railway.internal:5432/railway'
     )
 }
 
