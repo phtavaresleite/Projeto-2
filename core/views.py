@@ -33,7 +33,6 @@ def contato(request):
     return render(request, 'contato.html', context)
 
 @login_required
-@csrf_protect
 def produtos(request):
 
     print (f'Usuario: {request.user}')
