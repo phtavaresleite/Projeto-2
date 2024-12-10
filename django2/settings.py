@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -103,7 +102,7 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres:ZQeEqFgIcGdswdyyicGQjHGIdRDaRVUh@postgres.railway.internal:5432/railway'
+        default='postgresql://postgres:ZQeEqFgIcGdswdyyicGQjHGIdRDaRVUh@junction.proxy.rlwy.net:37069/railway'
     )
 }
 
